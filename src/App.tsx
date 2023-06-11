@@ -5,11 +5,13 @@ import axios from "axios";
 // const baseUrl = "http://localhost:3500";
 const baseUrl = "https://real-time-chat-000-api.onrender.com";
 
+//@ts-ignore
 const socket = io.connect(baseUrl);
 
 interface Message {
   status: "sent" | "received";
-  message: string;
+  message?: string;
+  content?: string;
   sender: string;
 }
 
