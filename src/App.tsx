@@ -20,14 +20,14 @@ function App() {
   const [message, setMessage] = useState("");
 
   const [chat, setChat] = useState<Message[]>([]);
-  const [isLoading, setIsLoading] = useState(false);
-  const [isError, setIsError] = useState(false);
+  // const [isLoading, setIsLoading] = useState(false);
+  // const [isError, setIsError] = useState(false);
 
   const room = "room1";
 
   useEffect(() => {
-    setIsError(false);
-    setIsLoading(true);
+    // setIsError(false);
+    // setIsLoading(true);
 
     axios
       .get(`${baseUrl}/chats`)
@@ -42,10 +42,10 @@ function App() {
         setChat(messages);
       })
       .catch(() => {
-        setIsError(true);
+        // setIsError(true);
       })
       .finally(() => {
-        setIsLoading(false);
+        // setIsLoading(false);
       });
   }, []);
 
